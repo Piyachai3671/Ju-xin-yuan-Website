@@ -58,6 +58,10 @@
                 height: 400px;
             }
         }
+        .card-img{
+            width: 100%;
+            height: 200px;
+        }
     </style>
 @endsection
 
@@ -76,41 +80,46 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <div id="carouselExample" class="carousel slide cover-img-size-carousel">
+                    <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+                        <!-- Indicators/dots -->
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                            <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                            <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+                        </div>
+
+                        <!-- The slideshow/carousel -->
                         <div class="carousel-inner">
-                            <div class="img-size-carousel div img">
-                                <div class="carousel-item active">
-                                    <img src="../img/2.png" class="d-block "style="" alt="...">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="../img/3.png" class="d-block" alt="...">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="../img/4.png" class="d-block" alt="...">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="../img/5.png" class="d-block" alt="...">
-                                </div>
+                            <div class="carousel-item active">
+                                <img src="../img/2.png" alt="Los Angeles" class="d-block" style="width:100%">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../img/3.png" alt="Chicago" class="d-block" style="width:100%">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../img/4.png" alt="New York" class="d-block" style="width:100%">
                             </div>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
-                            data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
+
+                        <!-- Left and right controls/icons -->
+                        <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
-                            data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
+                        <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
                         </button>
                     </div>
                 </div>
             </div>
 
+
+            {{-- ข่าวสาร --}}          
+            <h1>ข่าวสาร</h1> 
             <div class="row">
                 <div class=" mt-3 col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xxl-3">
                     <div class="card shadow-sm">
-                        <img src="../img/what is durian.jpg">
+                        <img src="../img/what is durian.jpg" class="card-img">
                         <div class="card-body">
                             <div class="" v-if="langue === 'TH'">
                                 <p>
@@ -175,7 +184,7 @@
                 </div>
                 <div class=" mt-3 col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xxl-3">
                     <div class="card shadow-sm">
-                        <img src="../img/factory.jpg">
+                        <img src="../img/factory.jpg" class="card-img">
                         <div class="card-body">
                             <div class="" v-if="langue === 'TH'">
                                 <p>
@@ -229,15 +238,15 @@
                     </div>
                 </div>
                 <div class=" mt-3 col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xxl-3">
-                    <div class="card shadow-sm">
-                        <img src="../img/no-photo.png" width="50%" height="50%">
+                    <div class="card shadow-sm" @click="OnGoPage_Job('TH')">
+                        <img src="/img/job1.jpg" class="card-img" >
                         <div class="card-body">
                             <div class="" v-if="langue === 'TH'">
                                 <p>
-                                    <span style="color: black; span-size: large; margin:auto;"><b>ข่าวประชาสัมพันธ์
+                                    <span style="color: black; span-size: large; margin:auto;"><b>ร่วมงานกับเรา
                                         </b></span>
                                 </p>
-                                <p class="card-text">รอการอัพเดตข้อมูล</p>
+                                <p class="card-text">บริษัท จู ซิน หยวน เทรดดิ้ง จำกัด เปิดรับสมัครงานหลายตำแหน่ง</p>
                                 <div class="d-flex justify-content-between align-items-text-align: center;">
                                     <div class="btn-group">
                                         <div>
@@ -315,7 +324,7 @@
                 OnchangeLangue_CN() {
                     this.langue = "CH";
                     console.log("Select Langue", this.langue);
-                },    
+                },
                 OnGoPage_Home(parameter_language) {
                     location = '/Thai/home-th/' + parameter_language;
                 },
@@ -330,6 +339,9 @@
                 },
                 OnGoPage_Product(parameter_language) {
                     location = '/Thai/th-product/' + parameter_language;
+                },
+                OnGoPage_Job(parameter_language) {
+                    location = '/Thai/job/index/' + parameter_language;
                 },
             },
             mounted() {

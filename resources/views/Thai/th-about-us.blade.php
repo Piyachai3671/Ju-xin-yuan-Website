@@ -35,7 +35,27 @@
                     </div>
                 </div>
             </div>
-            <div class=""v-if="langue === 'TH'">
+
+            <div class="card mb-3" style="max-width: 50rem; margin: auto; margin-top: 75px;">
+                <img src="/img/job1.jpg" style="width: 100%; height: 400px; object-fit: cover;" alt="ไม่พบรูปภาพ">
+                <div class="card-body">
+                    <div class="" v-if="langue === 'TH'">
+                        <h5 class="card-title"><b>ร่วมงานกับเรา</b></h5>
+                        <p class="card-text"><button class="btn btn-link">อ่านเพิ่มเติม...</button></p>
+                    </div>
+
+                    <div class="" v-if=" langue === 'EN'">
+                        <h5 class="card-title"><b>About us</b></h5>
+                        <p class="card-text">waiting for update...</p>
+                    </div>
+
+                    <div class="" v-if=" langue === 'CH'">
+                        <h5 class="card-title"><b>关于聚鑫源</b></h5>
+                        <p class="card-text">waiting for update.</p>
+                    </div>
+                </div>
+            </div>
+            {{-- <div class=""v-if="langue === 'TH'">
                 <h5 class="card-title" style="text-align:center;" style="color:white; font-size: 35px; font-weight: bold;">
                     ข่าวประชาสัมพันธ์
                 </h5>
@@ -75,7 +95,7 @@
                     <h5 class="card-title" style="margin-left: 10px;"><b>年春节联欢晚会</b></h5>
                     <img src="#" class="card-img-top" width="50%" height="50%" alt="ไม่พบรูปภาพ">
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 @endsection
@@ -91,7 +111,7 @@
                 Start() {
                     let parameter_language = document.querySelector("#la-page").value;
                     this.langue = parameter_language;
-                    console.log("Contract Argument language:", this.langue);
+                    console.log("About_Page Argument language:", this.langue);
                 },
                 OnchangeLangue_TH() {
                     this.langue = "TH";

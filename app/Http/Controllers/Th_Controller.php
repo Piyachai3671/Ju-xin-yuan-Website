@@ -26,6 +26,9 @@ class Th_Controller extends Controller
     public function IndexThDurian($parameter_language){
         return view('Thai.th-durian-story',compact('parameter_language'));
     }
+    public function Indexjob($parameter_language){
+        return view('Thai.job.index',compact('parameter_language'));
+    }
    
 
     

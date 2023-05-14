@@ -24,5 +24,7 @@ Route::controller(Th_Controller::class)->group(function(){
     Route::get('/Thai/th-contact-us/{parameter_language?}','IndexThContract');
     Route::get('/Thai/th-about-us/{parameter_language?}','IndexThAbout');
     Route::get('/Thai/th-durian-story/{parameter_language?}','IndexThDurian');
+    Route::get('/Thai/job/index/{parameter_language?}','Indexjob');
+   
 });
 
