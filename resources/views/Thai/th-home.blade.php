@@ -10,108 +10,181 @@
         }
 
         .cover-img-size {
+            height: 500px;
             width: 100%;
-            margin: 0 auto;
+            padding: 0 20px 10px 20px;
         }
 
         @media screen and (min-width: 768px) {
             .cover-img-size {
-                margin: 0 auto;
-                width: 50%;
+                height: 500px;
+                width: 100%;
+                padding: 0 20px 10px 20px;
             }
         }
 
         .img-size img {
-            width: 100%;
-            height: 780px;
-
-        }
-
-        @media screen and (max-width: 768px) {
-            .img-size img {
-                width: 100%;
-                height: 650px;
-
-            }
-        }
-
-        .cover-img-size-carousel {
-            margin: 0 auto;
+            height: 500px;
             width: 100%;
         }
 
         @media screen and (min-width: 768px) {
-            .cover-img-size-carousel {
-                margin: 0 auto;
-                width: 50%;
-            }
-        }
-
-        .img-size-carousel div img {
-            width: 100%;
-            height: 500px;
-        }
-
-        @media screen and (max-width: 768px) {
-            .img-size-carousel div img {
+            .img-size img {
+                height: 500px;
                 width: 100%;
-                height: 400px;
             }
+        }
+
+        .cover-img_carousel-size {
+            height: 600px;
+            width: 100%;
+            padding: 0 20px 10px 20px;
+        }
+
+        @media screen and (min-width: 768px) {
+            .cover-img_carousel-size {
+                height: 600px;
+                width: 100%;
+                padding: 0 20px 10px 20px;
+            }
+        }
+
+        .img-size_carousel img {
+            height: 600px;
+            width: 100%;
+        }
+
+        @media screen and (min-width: 768px) {
+            .img-size_carousel img {
+                height: 600px;
+                width: 100%;
+            }
+        }
+
+        .card-img {
+            width: 100%;
+            height: 200px;
+        }
+
+        .button_more {
+            background-color: #009062;
+            border-color: #d2ad5b;
+            color: white;
+            transition: all 0.2s ease-in-out;
+
+        }
+
+        .button_more:hover {
+            background-color: #06593e;
+            transform: scale(1.05);
+        }
+
+        .button_more i {
+            color: #d4ff00;
+        }
+
+        .card {
+            flex: 1 0 21%;
+            margin: 10px;
+            transform: translateY(0px);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        p.card-text {
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
         }
     </style>
 @endsection
 
 @section('content')
 <input hidden value="{{ $parameter_language }}" id="la-page">
-    <div class=""id="app-th-home">
+    <div class=""id="app-homecopy">
         @include('navbar.index')
         <div class="padding-page">
             <div class="row">
-                <div class="col" style="padding:20px;">
-                    <div class="cover-img-size">
-                        <div class="img-size ">
-                            <img src="/img/QrcodeJuxin.jpg" alt="ไม่พบรูปภาพ">
+                <div class="col" style="padding:0px;">
+                    <div id="carouselExample" class="carousel slide cover-img-size" style="">
+                        <div class="carousel-inner ">
+                            <div class="carousel-item active">
+                                <div class="img-size">
+                                    <img src="/img/main01.png" class="d-block" style="" alt="...">
+                                </div>
+                            </div>
+                            {{-- <div class="carousel-item">
+                            <img src="..." class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="..." class="d-block w-100" alt="...">
+                          </div> --}}
                         </div>
+                        {{-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Next</span>
+                        </button> --}}
                     </div>
+                    {{-- <div class="cover-img-size">
+                        <div class="img-size ">
+                            <img src="/img/main01.png" style="width: 100%; height: 600px;" alt="ไม่พบรูปภาพ">
+                        </div>
+                    </div> --}}
                 </div>
             </div>
             <div class="row">
                 <div class="col">
-                    <div id="carouselExample" class="carousel slide cover-img-size-carousel">
+                    <div id="demo" class="carousel slide cover-img_carousel-size" data-bs-ride="carousel">
+
+                        <!-- Indicators/dots -->
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                            <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                            <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+                        </div>
+
+                        <!-- The slideshow/carousel -->
                         <div class="carousel-inner">
-                            <div class="img-size-carousel div img">
-                                <div class="carousel-item active">
-                                    <img src="/img/2.png" class="d-block "style="" alt="...">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="/img/3.png" class="d-block" alt="...">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="/img/4.png" class="d-block" alt="...">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="/img/5.png" class="d-block" alt="...">
-                                </div>
+                            <div class="carousel-item active img-size_carousel">
+                                <img src="/img/2.png" alt="Los Angeles" class="d-block" style="width:100%">
+                            </div>
+                            <div class="carousel-item img-size_carousel">
+                                <img src="/img/3.png" alt="Chicago" class="d-block" style="width:100%">
+                            </div>
+                            <div class="carousel-item img-size_carousel">
+                                <img src="/img/4.png" alt="New York" class="d-block" style="width:100%">
                             </div>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
-                            data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
+
+                        <!-- Left and right controls/icons -->
+                        <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
-                            data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
+                        <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
                         </button>
                     </div>
                 </div>
             </div>
 
+
+            {{-- ข่าวสาร --}}
+            <div class="badge bg-primary mt-4">
+                <h3 v-if="langue === 'TH'">ข่าวสาร</h3>
+                <h3 v-if="langue === 'EN'">news</h3>
+                <h3 v-if="langue === 'CH'">新闻</h3>
+            </div>
             <div class="row">
                 <div class=" mt-3 col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xxl-3">
                     <div class="card shadow-sm">
-                        <img src="/img/what is durian.jpg">
+                        <img src="/img/what is durian.jpg" class="card-img">
                         <div class="card-body">
                             <div class="" v-if="langue === 'TH'">
                                 <p>
@@ -122,12 +195,13 @@
                                     ทุเรียนเป็นผลไม้เมืองร้อนที่มีชื่อเสียงที่สุดในเอเชียตะวันออกเฉียงใต้และมีชื่อเสียงในฐานะ
                                     “ราชาผลไม้เมืองร้อน”
                                 </p>
+
                                 <div class="d-flex justify-content-between align-items-text-align: center;">
                                     <div class="btn-group">
                                         <div>
-                                            <button style="background-color: #009062; border-color: #d2ad5b; color: white;"
-                                                class="btn btn-sm btn-outline-secondary">อ่านเพิ่มเติม <i
-                                                    class="fa-solid fa-caret-right" style="color: #d4ff00;"></i></button>
+                                            <button @click="OnGoPage_StoryDurian('TH')"
+                                                class="btn btn-sm btn-outline-secondary button_more">อ่านเพิ่มเติม
+                                                <i class="fa-solid fa-caret-right"></i></button>
                                         </div>
                                     </div>
                                 </div>
@@ -145,9 +219,9 @@
                                 <div class="d-flex justify-content-between align-items-text-align: center;">
                                     <div class="btn-group">
                                         <div>
-                                            <button style="background-color: #009062; border-color: #d2ad5b; color: white;"
-                                                class="btn btn-sm btn-outline-secondary">Read more<i
-                                                    class="fa-solid fa-caret-right" style="color: #d4ff00;"></i></button>
+                                            <button @click="OnGoPage_StoryDurian('EN')"
+                                                class="btn btn-sm btn-outline-secondary button_more">Read more<i
+                                                    class="fa-solid fa-caret-right"></i></button>
                                         </div>
                                     </div>
                                 </div>
@@ -163,9 +237,9 @@
                                 <div class="d-flex justify-content-between align-items-text-align: center;">
                                     <div class="btn-group">
                                         <div>
-                                            <button style="background-color: #009062; border-color: #d2ad5b; color: white;"
-                                                class="btn btn-sm btn-outline-secondary">閱讀更多<i
-                                                    class="fa-solid fa-caret-right" style="color: #d4ff00;"></i></button>
+                                            <button @click="OnGoPage_StoryDurian('CH')"
+                                                class="btn btn-sm btn-outline-secondary button_more">閱讀更多<i
+                                                    class="fa-solid fa-caret-right"></i></button>
                                         </div>
                                     </div>
                                 </div>
@@ -176,7 +250,7 @@
                 </div>
                 <div class=" mt-3 col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xxl-3">
                     <div class="card shadow-sm">
-                        <img src="/img/factory.jpg">
+                        <img src="/img/factory.jpg" class="card-img">
                         <div class="card-body">
                             <div class="" v-if="langue === 'TH'">
                                 <p>
@@ -186,9 +260,9 @@
                                 <div class="d-flex justify-content-between align-items-text-align: center;">
                                     <div class="btn-group">
                                         <div>
-                                            <button style="background-color: #009062; border-color: #d2ad5b; color: white;"
-                                                class="btn btn-sm btn-outline-secondary">อ่านเพิ่มเติม <i
-                                                    class="fa-solid fa-caret-right" style="color: #d4ff00;"></i></button>
+                                            <button @click="OnGoPage_About('TH')"
+                                                class="btn btn-sm btn-outline-secondary button_more">อ่านเพิ่มเติม <i
+                                                    class="fa-solid fa-caret-right"></i></button>
                                         </div>
                                     </div>
                                 </div>
@@ -202,9 +276,9 @@
                                 <div class="d-flex justify-content-between align-items-text-align: center;">
                                     <div class="btn-group">
                                         <div>
-                                            <button style="background-color: #009062; border-color: #d2ad5b; color: white;"
-                                                class="btn btn-sm btn-outline-secondary">Read more<i
-                                                    class="fa-solid fa-caret-right" style="color: #d4ff00;"></i></button>
+                                            <button @click="OnGoPage_About('EN')"
+                                                class="btn btn-sm btn-outline-secondary button_more">Read more<i
+                                                    class="fa-solid fa-caret-right"></i></button>
                                         </div>
                                     </div>
                                 </div>
@@ -218,9 +292,9 @@
                                 <div class="d-flex justify-content-between align-items-text-align: center;">
                                     <div class="btn-group">
                                         <div>
-                                            <button style="background-color: #009062; border-color: #d2ad5b; color: white;"
-                                                class="btn btn-sm btn-outline-secondary">閱讀更多<i
-                                                    class="fa-solid fa-caret-right" style="color: #d4ff00;"></i></button>
+                                            <button @click="OnGoPage_About('CH')"
+                                                class="btn btn-sm btn-outline-secondary button_more">閱讀更多<i
+                                                    class="fa-solid fa-caret-right"></i></button>
                                         </div>
                                     </div>
                                 </div>
@@ -231,20 +305,20 @@
                 </div>
                 <div class=" mt-3 col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xxl-3">
                     <div class="card shadow-sm">
-                        <img src="/img/no-photo.png" width="50%" height="50%">
+                        <img src="/img/job1.jpg" class="card-img">
                         <div class="card-body">
                             <div class="" v-if="langue === 'TH'">
                                 <p>
-                                    <span style="color: black; span-size: large; margin:auto;"><b>ข่าวประชาสัมพันธ์
+                                    <span style="color: black; span-size: large; margin:auto;"><b>ร่วมงานกับเรา
                                         </b></span>
                                 </p>
-                                <p class="card-text">รอการอัพเดตข้อมูล</p>
+                                <p class="card-text">บริษัท จู ซิน หยวน เทรดดิ้ง จำกัด เปิดรับสมัครงานหลายตำแหน่ง</p>
                                 <div class="d-flex justify-content-between align-items-text-align: center;">
                                     <div class="btn-group">
                                         <div>
-                                            <button style="background-color: #009062; border-color: #d2ad5b; color: white;"
-                                                class="btn btn-sm btn-outline-secondary">อ่านเพิ่มเติม <i
-                                                    class="fa-solid fa-caret-right" style="color: #d4ff00;"></i></button>
+                                            <button @click="OnGoPage_Job('TH')"
+                                                class="btn btn-sm btn-outline-secondary button_more">อ่านเพิ่มเติม <i
+                                                    class="fa-solid fa-caret-right"></i></button>
                                         </div>
                                     </div>
                                 </div>
@@ -259,9 +333,9 @@
                                 <div class="d-flex justify-content-between align-items-text-align: center;">
                                     <div class="btn-group">
                                         <div>
-                                            <button style="background-color: #009062; border-color: #d2ad5b; color: white;"
-                                                class="btn btn-sm btn-outline-secondary">Read more<i
-                                                    class="fa-solid fa-caret-right" style="color: #d4ff00;"></i></button>
+                                            <button @click="OnGoPage_Job('CH')"
+                                                class="btn btn-sm btn-outline-secondary button_more">Read more<i
+                                                    class="fa-solid fa-caret-right"></i></button>
                                         </div>
                                     </div>
                                 </div>
@@ -276,9 +350,9 @@
                                 <div class="d-flex justify-content-between align-items-text-align: center;">
                                     <div class="btn-group">
                                         <div>
-                                            <button style="background-color: #009062; border-color: #d2ad5b; color: white;"
-                                                class="btn btn-sm btn-outline-secondary">閱讀更多<i
-                                                    class="fa-solid fa-caret-right" style="color: #d4ff00;"></i></button>
+                                            <button @click="OnGoPage_Job('CH')"
+                                                class="btn btn-sm btn-outline-secondary button_more">閱讀更多<i
+                                                    class="fa-solid fa-caret-right"></i></button>
                                         </div>
                                     </div>
                                 </div>
@@ -302,9 +376,8 @@
             },
             methods: {
                 Start() {
-                    let parameter_language = document.querySelector("#la-page").value;
-                    this.langue = parameter_language;
-                    console.log("Home Argument language:", this.langue);
+                    this.langue = "TH";
+                    console.log("Home Strat Langue", this.langue);
                 },
                 OnchangeLangue_TH() {
                     this.langue = "TH";
@@ -333,11 +406,15 @@
                 OnGoPage_Product(parameter_language) {
                     location = '/Thai/th-product/' + parameter_language;
                 },
+                OnGoPage_Job(parameter_language) {
+                    location = '/Thai/job/index/' + parameter_language;
+                },
             },
             mounted() {
                 this.Start();
+
             }
         }
-        Vue.createApp(HOMECOPY).mount('#app-th-home');
+        Vue.createApp(HOMECOPY).mount('#app-homecopy');
     </script>
 @endsection

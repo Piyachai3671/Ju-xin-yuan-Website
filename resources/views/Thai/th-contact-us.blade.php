@@ -92,48 +92,6 @@
             </div>
         </div>
 
-        <div class=""v-if="langue === 'TH'">
-            <h5 @click="Oncheck" class="card-title" style="text-align:center;"
-                style="color:white; font-size: 35px; font-weight: bold;">
-                ข่าวประชาสัมพันธ์
-            </h5>
-            <div class="card mb-3" style="max-width: 50rem; margin: auto; margin-top: 20px;">
-                <h5 class="card-title" style="margin-left: 10px;"><b>มอบของรางวัล</b></h5>
-                <img src="#" class="card-img-top" width="50%" height="50%" alt="ไม่พบรูปภาพ">
-            </div>
-            <div class="card mb-3" style="max-width: 50rem; margin: auto; margin-top: 20px;">
-                <h5 class="card-title" style="margin-left: 10px;"><b>งานเทศกาลตรุษจีน</b></h5>
-                <img src="#" class="card-img-top" width="50%" height="50%" alt="ไม่พบรูปภาพ">
-            </div>
-        </div>
-
-        <div class=""v-if="langue === 'EN'">
-            <h5 class="card-title" style="text-align:center;" style="color:white; font-size: 35px; font-weight: bold;">
-                News Release
-            </h5>
-            <div class="card mb-3" style="max-width: 50rem; margin: auto; margin-top: 20px;">
-                <h5 class="card-title" style="margin-left: 10px;"><b>Giving Gift Baskets</b></h5>
-                <img src="#" class="card-img-top" width="50%" height="50%" alt="ไม่พบรูปภาพ">
-            </div>
-            <div class="card mb-3" style="max-width: 50rem; margin: auto; margin-top: 20px;">
-                <h5 class="card-title" style="margin-left: 10px;"><b>Chinese New Year Festival</b></h5>
-                <img src="#" class="card-img-top" width="50%" height="50%" alt="ไม่พบรูปภาพ">
-            </div>
-        </div>
-
-        <div class=""v-if="langue === 'CH'">
-            <h5 class="card-title" style="text-align:center;" style="color:white; font-size: 35px; font-weight: bold;">
-                公司时事
-            </h5>
-            <div class="card mb-3" style="max-width: 50rem; margin: auto; margin-top: 20px;">
-                <h5 class="card-title" style="margin-left: 10px;"><b>位送礼品篮</b></h5>
-                <img src="#" class="card-img-top" width="50%" height="50%" alt="ไม่พบรูปภาพ">
-            </div>
-            <div class="card mb-3" style="max-width: 50rem; margin: auto; margin-top: 20px;">
-                <h5 class="card-title" style="margin-left: 10px;"><b>年春节联欢晚会</b></h5>
-                <img src="#" class="card-img-top" width="50%" height="50%" alt="ไม่พบรูปภาพ">
-            </div>
-        </div>
 
     </div>
 @endsection

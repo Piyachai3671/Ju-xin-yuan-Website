@@ -17,16 +17,40 @@
         .nav_langule {
             color: #008000 !important;
         }
+        .position-re {
+            position: relative;
+        }
+
+        .o-hidden {
+            overflow: hidden;
+        }
+
+        .img-hover-zoom {
+            overflow: hidden;
+            background-color: black;
+            border-radius: 5%;
+        }
+
+        .img-hover-zoom img {
+
+            width: 100%;
+            height: auto;
+            transition: transform 1.0s ease, opacity 1.0s ease;
+        }
+
+        .img-hover-zoom:hover img {
+
+            transform: scale(1.1);
+            opacity: 0.5;
+        }
     </style>
 @endsection
 @section('content')
     <input hidden value="{{ $parameter_language }}" id="la-page">
     <div class="bg" id="app-product">
         @include('navbar.index')
-
-
         <div class="row size-img">
-            <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="col-lg-4 col-md-6 col-sm-12 img-hover-zoom" >
                 <img src="/img/S__14778505.jpg" class="" style="">
             </div>
             <div class="col-lg-4 col-md-6 col-sm-12">

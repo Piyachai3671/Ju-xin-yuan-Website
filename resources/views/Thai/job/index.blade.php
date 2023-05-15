@@ -215,7 +215,7 @@
         <div class="row">
             <div class="col-xs-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4 mt-3 mb-3" v-for="item in items_TH":key="item.id">
                 <div class="item">
-                    <div class="position-re o-hidden img-hover-zoom ">
+                    <div class="position-re o-hidden img-hover-zoom">
                         <img class="" style="width:100%; height:500px; object-fit:cover;" :src="item.Image">
                         <div class="con">
                             <h5>

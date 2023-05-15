@@ -31,7 +31,7 @@
 
                     <div class="" v-if=" langue === 'CH'">
                         <h5 class="card-title"><b>关于聚鑫源</b></h5>
-                        <p class="card-text">waiting for update.</p>
+                        <p class="card-text">待数更新...</p>
                     </div>
                 </div>
             </div>
@@ -41,17 +41,17 @@
                 <div class="card-body">
                     <div class="" v-if="langue === 'TH'">
                         <h5 class="card-title"><b>ร่วมงานกับเรา</b></h5>
-                        <p class="card-text"><button class="btn btn-link">อ่านเพิ่มเติม...</button></p>
+                        <p class="card-text"><button @click="OnGoPage_Job('TH')" class="btn btn-link">อ่านเพิ่มเติม...</button></p>
                     </div>
 
                     <div class="" v-if=" langue === 'EN'">
-                        <h5 class="card-title"><b>About us</b></h5>
-                        <p class="card-text">waiting for update...</p>
+                        <h5 class="card-title"><b>Career</b></h5>
+                        <p class="card-text"><button @click="OnGoPage_Job('EN')" class="btn btn-link">Read More...</button></p>
                     </div>
 
                     <div class="" v-if=" langue === 'CH'">
-                        <h5 class="card-title"><b>关于聚鑫源</b></h5>
-                        <p class="card-text">waiting for update.</p>
+                        <h5 class="card-title"><b>入我</b></h5>
+                        <p class="card-text"><button @click="OnGoPage_Job('CH')" class="btn btn-link">读之愈多...</button></p>
                     </div>
                 </div>
             </div>
@@ -139,6 +139,9 @@
                 },
                 OnGoPage_Product(parameter_language) {
                     location = '/Thai/th-product/' + parameter_language;
+                },
+                OnGoPage_Job(parameter_language) {
+                    location = '/Thai/job/index/' + parameter_language;
                 },
             },
             mounted() {
