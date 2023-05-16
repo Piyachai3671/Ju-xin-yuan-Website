@@ -7,12 +7,12 @@
         }
 
         /* h1,
-                    h2,
-                    h3,
-                    h4,
-                    h5 {
-                        color: rgb(255, 255, 255);
-                    } */
+                            h2,
+                            h3,
+                            h4,
+                            h5 {
+                                color: rgb(255, 255, 255);
+                            } */
 
         @keyframes slide-down {
             0% {
@@ -185,57 +185,110 @@
 @endsection
 @section('content')
     <input hidden value="{{ $parameter_language }}" id="la-page">
-    <div class="padding-page"id="app-job">
+    <div class=""id="app-job">
         @include('navbar.index')
-
-        <div class="" style="text-align: center; justify-content: center;">
-            <h1>บริษัท จู ซิน หยวน เทรดดิ้ง จำกัด เปิดรับสมัครพนักงาน </h1>
-            <img :src="imgSrc" style="height: 600px; width: 80%; border-radius:2%; ">
-        </div>
-
-        <div class="badge bg-primary mt-4">
-            <h3>เกี่ยวกับตำแหน่งงาน</h3>
-        </div>
-        {{-- <div class="row">
-            <div class="col-xs-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4 mt-3 mb-3" v-for="item in items_TH"
-                :key="item.id">
-                <div class="card">
-                    <div class="card-header">
-                        <img src="/img/no-photo.png" class="card-img">
-                    </div>
-                    <div class="card-body ">
-                        <h3>@{{ item.Position }}</h3>
-                        <p>@{{ item.Description }}</p>
-
-                    </div>
-
-                </div>
+        <div class="padding-page">
+            <div class="" style="text-align: center; justify-content: center;">
+                <h1>บริษัท จู ซิน หยวน เทรดดิ้ง จำกัด เปิดรับสมัครพนักงาน </h1>
+                <img :src="imgSrc" style="height: 600px; width: 80%; border-radius:2%; ">
             </div>
-        </div> --}}
-        <div class="row">
-            <div class="col-xs-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4 mt-3 mb-3" v-for="item in items_TH":key="item.id">
-                <div class="item">
-                    <div class="position-re o-hidden img-hover-zoom">
-                        <img class="" style="width:100%; height:500px; object-fit:cover;" :src="item.Image">
-                        <div class="con">
-                            <h5>
-                                <a href="#">
-                                    @{{ item.Position }}
-                                </a>
-                            </h5>
-                            <div class="line"></div>
-                            <div class="row facilities">
-                                <div class="col-md-7">
-                                    <ul>
-                                        <li>สมาชิกทั้งหมด : 0คน</li>
-                                    </ul>
+
+            <div class="badge bg-primary mt-4">
+                <h3 v-if="langue === 'TH'">เกี่ยวกับตำแหน่งงาน</h3>
+                <h3 v-if="langue === 'EN'">about job title</h3>
+                <h3 v-if="langue === 'CH'">關於職稱</h3>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4 mt-3 mb-3" v-if="langue === 'TH'"
+                    v-for="item in items_TH":key="item.id">
+                    <div class="item">
+                        <div class="position-re o-hidden img-hover-zoom">
+                            <img class="" style="width:100%; height:500px; object-fit:cover;" :src="item.Image">
+                            <div class="con">
+                                <h5>
+                                    <a href="#">
+                                        @{{ item.Position }}
+                                    </a>
+                                </h5>
+                                <div class="line"></div>
+                                <div class="row facilities">
+                                    <div class="col-md-7">
+                                        <ul>
+                                            <li>สมาชิกทั้งหมด : 0 คน</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-5 text-end">
+                                        <div class="permalink">
+                                            <a href="#" v-if="langue === 'TH'">
+                                                เพิ่มเติม
+                                                <i class="fa-solid fa-arrow-right"></i>
+                                            </a>       
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col-md-5 text-end">
-                                    <div class="permalink">
-                                        <a href="#">
-                                            Details
-                                            <i class="fa-solid fa-arrow-right"></i>
-                                        </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4 mt-3 mb-3" v-if="langue === 'EN'"
+                    v-for="item in items_EN":key="item.id">
+                    <div class="item">
+                        <div class="position-re o-hidden img-hover-zoom">
+                            <img class="" style="width:100%; height:500px; object-fit:cover;" :src="item.Image">
+                            <div class="con">
+                                <h5>
+                                    <a href="#">
+                                        @{{ item.Position }}
+                                    </a>
+                                </h5>
+                                <div class="line"></div>
+                                <div class="row facilities">
+                                    <div class="col-md-7">
+                                        <ul>
+                                            <li>All members : 0 people</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-5 text-end">
+                                        <div class="permalink">
+                                            <a href="#" v-if="langue === 'EN'">
+                                                Details
+                                                <i class="fa-solid fa-arrow-right"></i>
+                                            </a>                   
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4 mt-3 mb-3" v-if="langue === 'CH'"
+                    v-for="item in items_CH":key="item.id">
+                    <div class="item">
+                        <div class="position-re o-hidden img-hover-zoom">
+                            <img class="" style="width:100%; height:500px; object-fit:cover;" :src="item.Image">
+                            <div class="con">
+                                <h5>
+                                    <a href="#">
+                                        @{{ item.Position }}
+                                    </a>
+                                </h5>
+                                <div class="line"></div>
+                                <div class="row facilities">
+                                    <div class="col-md-7">
+                                        <ul>
+                                            <li>All members : 0 people</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-5 text-end">
+                                        <div class="permalink">     
+                                            <a href="#" v-if="langue === 'CH'">
+                                                Details
+                                                <i class="fa-solid fa-arrow-right"></i>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -244,6 +297,7 @@
                 </div>
             </div>
         </div>
+
 
     </div>
 @endsection
@@ -259,19 +313,19 @@
                     isMobile: false,
                     items_TH: [{
                             id: 1,
-                            Image: "/img/job1.jpg",
+                            Image: "/img/Person.jpg",
                             Position: "เจ้าหน้าที่บุคคล",
                             Description: "Item 1",
                         },
                         {
                             id: 2,
-                            Image: "/img/no-photo.png",
+                            Image: "/img/Purchasing_Nut1.jpg",
                             Position: "เจ้าหน้าที่จัดซื้อ",
                             Description: "Item 2"
                         },
                         {
                             id: 3,
-                            Image: "/img/no-photo.png",
+                            Image: "/img/Account_Au1.jpg",
                             Position: "เจ้าหน้าที่บัญชี",
                             Description: "Item 3"
                         },
@@ -283,13 +337,13 @@
                         },
                         {
                             id: 5,
-                            Image: "/img/no-photo.png",
+                            Image: "/img/electrician.jpg",
                             Position: "ช่างไฟฟ้าโรงงาน",
                             Description: "Item 3"
                         },
                         {
                             id: 6,
-                            Image: "/img/no-photo.png",
+                            Image: "/img/Marketing_Aea.jpg",
                             Position: "เจ้าหน้าที่การตลาด",
                             Description: "Item 3"
                         },
@@ -321,6 +375,140 @@
                             id: 10,
                             Image: "/img/no-photo.png",
                             Position: "พนักงานจัดซื้อทุเรียน",
+                            Description: "Item 3"
+                        },
+                    ],
+                    items_EN: [{
+                            id: 1,
+                            Image: "/img/Person.jpg",
+                            Position: "Person officer",
+                            Description: "Item 1",
+                        },
+                        {
+                            id: 2,
+                            Image: "/img/Purchasing_Nut1.jpg",
+                            Position: "Purchasing officer",
+                            Description: "Item 2"
+                        },
+                        {
+                            id: 3,
+                            Image: "/img/Account_Au1.jpg",
+                            Position: "Accountant",
+                            Description: "Item 3"
+                        },
+                        {
+                            id: 4,
+                            Image: "/img/no-photo.png",
+                            Position: "Safety officer",
+                            Description: "Item 3"
+                        },
+                        {
+                            id: 5,
+                            Image: "/img/electrician.jpg",
+                            Position: "Factory electrician",
+                            Description: "Item 3"
+                        },
+                        {
+                            id: 6,
+                            Image: "/img/Marketing_Aea.jpg",
+                            Position: "Marketing officer",
+                            Description: "Item 3"
+                        },
+                        {
+                            id: 7,
+                            Image: "/img/no-photo.png",
+                            Position: "IT Support",
+                            Description: "Item 3"
+                        },
+                        {
+                            id: 8,
+                            Image: "/img/no-photo.png",
+                            Position: "Durian quality control officer (QC,QA)",
+                            Description: "Item 3"
+                        },
+                        {
+                            id: 9,
+                            Image: "/img/no-photo.png",
+                            Position: "Production department",
+                            Description: "Item 3"
+                        },
+                        {
+                            id: 10,
+                            Image: "/img/no-photo.png",
+                            Position: "Durian sorting staff",
+                            Description: "Item 3"
+                        },
+                        {
+                            id: 10,
+                            Image: "/img/no-photo.png",
+                            Position: "Purchasing staff",
+                            Description: "Item 3"
+                        },
+                    ],
+                    items_CH: [{
+                            id: 1,
+                            Image: "/img/Person.jpg",
+                            Position: "Person officer",
+                            Description: "Item 1",
+                        },
+                        {
+                            id: 2,
+                            Image: "/img/Purchasing_Nut1.jpg",
+                            Position: "Purchasing officer",
+                            Description: "Item 2"
+                        },
+                        {
+                            id: 3,
+                            Image: "/img/Account_Au1.jpg",
+                            Position: "Accountant",
+                            Description: "Item 3"
+                        },
+                        {
+                            id: 4,
+                            Image: "/img/no-photo.png",
+                            Position: "Safety officer",
+                            Description: "Item 3"
+                        },
+                        {
+                            id: 5,
+                            Image: "/img/electrician.jpg",
+                            Position: "Factory electrician",
+                            Description: "Item 3"
+                        },
+                        {
+                            id: 6,
+                            Image: "/img/Marketing_Aea.jpg",
+                            Position: "Marketing officer",
+                            Description: "Item 3"
+                        },
+                        {
+                            id: 7,
+                            Image: "/img/no-photo.png",
+                            Position: "IT Support",
+                            Description: "Item 3"
+                        },
+                        {
+                            id: 8,
+                            Image: "/img/no-photo.png",
+                            Position: "Durian quality control officer (QC,QA)",
+                            Description: "Item 3"
+                        },
+                        {
+                            id: 9,
+                            Image: "/img/no-photo.png",
+                            Position: "Production department",
+                            Description: "Item 3"
+                        },
+                        {
+                            id: 10,
+                            Image: "/img/no-photo.png",
+                            Position: "Durian sorting staff",
+                            Description: "Item 3"
+                        },
+                        {
+                            id: 10,
+                            Image: "/img/no-photo.png",
+                            Position: "Purchasing staff",
                             Description: "Item 3"
                         },
                     ],

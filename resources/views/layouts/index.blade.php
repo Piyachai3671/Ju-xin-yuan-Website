@@ -62,7 +62,7 @@
                     Waen Moo 6 Wangmai Nayaiam Chanthaburi 22170 Tel 039-480-216 , 039-480-217
                 </span>
             </p>
-            <a href="https://www.facebook.com/" style="text-decoration: none;">
+            <a href="https://www.facebook.com/profile.php?id=100091847397228" style="text-decoration: none;">
                 <i class="fa-brands fa-facebook fa-2xl" style="color: white;"></i>
             </a>
             &nbsp;&nbsp;
