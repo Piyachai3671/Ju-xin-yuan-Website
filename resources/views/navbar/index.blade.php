@@ -52,21 +52,21 @@
 
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <div class="" v-if="langue === 'TH'">
-                                <li><a @click="OnGoPage_About('TH')" class="dropdown-item nav_aboutme" href="#">เกี่ยวกับเรา</a></li>
-                                <li><a @click="OnGoPage_StoryDurian('TH')" class="dropdown-item nav_story_durain"
+                                <li><a @click="OnGoPage_About('TH')" class="dropdown-item nav_aboutme " href="#">เกี่ยวกับเรา</a></li>
+                                <li><a @click="OnGoPage_StoryDurian('TH')" class="dropdown-item nav_story_durain "
                                         href="#">เรื่องทุเรียน</a></li>
                             </div>
 
                             <div class="" v-if="langue === 'EN'">
-                                <li><a @click="OnGoPage_About('EN')" class="dropdown-item nav_aboutme" href="#">About us</a></li>
-                                <li><a @click="OnGoPage_StoryDurian('EN')" class="dropdown-item nav_story_durain"
+                                <li><a @click="OnGoPage_About('EN')" class="dropdown-item nav_aboutme " href="#">About us</a></li>
+                                <li><a @click="OnGoPage_StoryDurian('EN')" class="dropdown-item nav_story_durain "
                                         href="#">Durain
                                         Story</a></li>
                             </div>
 
                             <div class="" v-if="langue === 'CH'">
-                                <li><a @click="OnGoPage_About('CH')" class="dropdown-item nav_aboutme" href="#">关于聚鑫源</a></li>
-                                <li><a @click="OnGoPage_StoryDurian('CH')" class="dropdown-item nav_story_durain"
+                                <li><a @click="OnGoPage_About('CH')" class="dropdown-item nav_aboutme " href="#">关于聚鑫源</a></li>
+                                <li><a @click="OnGoPage_StoryDurian('CH')" class="dropdown-item nav_story_durain "
                                         href="#">榴蓮的故事</a>
                                 </li>
                             </div>

@@ -376,8 +376,9 @@
             },
             methods: {
                 Start() {
-                    this.langue = "TH";
-                    console.log("Home Strat Langue", this.langue);
+                    let parameter_language = document.querySelector("#la-page").value;
+                    this.langue = parameter_language;
+                    console.log("Durian Story Argument language:", this.langue);
                 },
                 OnchangeLangue_TH() {
                     this.langue = "TH";

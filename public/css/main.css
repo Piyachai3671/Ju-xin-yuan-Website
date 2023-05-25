@@ -157,3 +157,7 @@
 .color-select-langue{
     color: #008000;
 }
+.nav-select:focus{
+    background-color: aqua;
+    color: red;
+}
